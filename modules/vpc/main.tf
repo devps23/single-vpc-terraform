@@ -15,7 +15,8 @@ resource "aws_subnet" "subnet" {
   }
 }
 # peer connection between vpc's
-resource "aws_vpc_peering_connection" "foo" {
+resource "aws_vpc_peering_connection" "peerconn" {
   peer_vpc_id   = var.default_vpc_id
   vpc_id        = aws_vpc.vpc.id
+  auto_accept   = true
 }
